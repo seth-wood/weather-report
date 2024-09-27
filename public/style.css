@@ -1,15 +1,19 @@
 body {
   background: hsl(154 50% 5%);
   color: hsl(154 84% 70%);
-  text-shadow: 0 0 4px hsl(154 84% 70%);
+  text-shadow: 0 0 3px hsl(154, 58%, 78%);
   font-family: monospace;
   font-size: 16px;
+  max-width: 550px;
+  /* margin: auto; */
 }
 
 pre {
   margin: auto;
-  margin-top: 10vh;
-  /* display: table; */
+  margin-top: 0;
+  margin-bottom: 0;
+  display: table;
+  width: 100%;
 }
 
 #glare {
@@ -41,7 +45,7 @@ pre {
   position: fixed;
   background: repeating-linear-gradient(
     transparent 0px 1px,
-    hsl(154 0% 0%/0.3) 3px 4px
+    hsl(154 0% 0%/0.2) 3px 4px
   );
   top: 0;
   left: 0;
@@ -69,12 +73,4 @@ pre {
 
 .blink {
   animation: blink 0.4s linear infinite;
-}
-
-#output {
-  white-space: pre-wrap;
-  word-break: break-word;
-  max-width: 80ch;
-  margin: 0 auto;
-  padding-bottom: 20px;
 }
