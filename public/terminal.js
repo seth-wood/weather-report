@@ -37,7 +37,20 @@ function handleKeypress(e, input, output) {
     return elements.indexOf(document.activeElement.tagName) === -1;
   }
 
-  if (noInputHasFocus) {
+  if (noInputHasFocus()) {
+    // List of keys to ignore
+    const ignoreKeys = [
+      "Meta", "Tab", "Shift", "Control", "Alt", "CapsLock",
+      "Escape", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight",
+      "Home", "End", "PageUp", "PageDown", "Insert", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"
+    ];
+
+    // Ignore listed keys
+    if (ignoreKeys.includes(e.key)) {
+      e.preventDefault();
+      return;
+    }
+
     // Enter clears the input and executes the command
     if (e.key === "Enter") {
       const command = input.innerText;
@@ -53,8 +66,10 @@ function handleKeypress(e, input, output) {
         input.innerHTML.length - 1
       );
     }
-    // For any other key, print the keystroke to the prompt
-    else input.insertAdjacentText("beforeend", e.key);
+    // For any other key, print the keystroke to the prompt if it's a printable character
+    else if (e.key.length === 1 && e.key.match(/[\x20-\x7E]/)) {  // Printable ASCII characters
+      input.insertAdjacentText("beforeend", e.key);
+    }
   }
 
   // Accept a command, execute it, and return any output

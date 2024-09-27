@@ -9,7 +9,7 @@ body {
 pre {
   margin: auto;
   margin-top: 10vh;
-  display: table;
+  /* display: table; */
 }
 
 #glare {
