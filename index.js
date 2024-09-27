@@ -26,9 +26,9 @@ app.post("/get-weather", async (req, res) => {
       API_URL +
         `lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`
     );
-    res.render("index.ejs", { forecast: result2.data.weather_overview });
+    res.json({ success: true, forecast: result2.data.weather_overview });
   } catch (error) {
-    res.render("index.ejs", { forecast: JSON.stringify(error.response.data) });
+    res.json({ success: false, error: error.response.data });
   }
 });
 

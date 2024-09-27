@@ -3,23 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Is it Raining?</title>
+    <title>Rain Check v.0345</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="response-area">
-        <p><%= locals.forecast %></p>
-      </div>
-      <form id="weatherForm" method="post">
-        <label for="lookup">Use your zip code to see the forecast:</label>
-        <input type="text" id="idInput" name="id" />
-        <input
-          id="get"
-          type="submit"
-          value="SUBMIT"
-          formaction="/get-weather"
-        />
-      </form>
+    <pre id="asciiText">
+      #     #                                             ######                                    
+      #  #  # ######   ##   ##### #    # ###### #####     #     # ###### #####   ####  #####  ##### 
+      #  #  # #       #  #    #   #    # #      #    #    #     # #      #    # #    # #    #   #   
+      #  #  # #####  #    #   #   ###### #####  #    #    ######  #####  #    # #    # #    #   #   
+      #  #  # #      ######   #   #    # #      #####     #   #   #      #####  #    # #####    #   
+      #  #  # #      #    #   #   #    # #      #   #     #    #  #      #      #    # #   #    #   
+       ## ##  ###### #    #   #   #    # ###### #    #    #     # ###### #       ####  #    #   #        
+    </pre>
+    <pre id="instructions"></pre>
+    <pre id="output"></pre>
+    <div id="prompt">
+      <span id="command-input"></span>
+      <span id="cursor" class="blink"></span>
     </div>
+
+    <div id="interlaced"></div>
+    <div id="glare"></div>
+
+    <script src="/terminal.js"></script>
   </body>
 </html>
