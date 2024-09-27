@@ -7,12 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "seth-wood <sethlwood@me.com>",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "axios": "^1.7.7",
     "ejs": "^3.1.10",
     "express": "^4.21.0"
-  }
+  },
+  "repository": "https://github.com/seth-wood/weather-report.git"
 }
